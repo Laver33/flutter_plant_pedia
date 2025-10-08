@@ -86,6 +86,7 @@ class _StartScreenState extends State<StartScreen> {
                   itemBuilder: (context, index){
                     return ListPopular(
                       title: posts[index].title,
+                      imagePath: posts[index].imagePath,
                     );
                   },
                 ),

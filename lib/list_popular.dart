@@ -4,8 +4,10 @@ import 'package:my_first_app/Style/CastColors.dart';
 
 class ListPopular extends StatelessWidget {
   final String title;
+  final String imagePath;
 
-  ListPopular ({required this.title});
+
+  ListPopular ({required this.title, required this.imagePath});
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,9 +30,14 @@ class ListPopular extends StatelessWidget {
               child: Column(
 
                 mainAxisAlignment: MainAxisAlignment.center,
-                
+
                 children: [
-                  Icon(Icons.abc_sharp)
+                  Image.asset(
+                    imagePath,
+                    height: 70,
+                  )              
+
+
                 ],
               ),
               height: 100
