@@ -11,10 +11,20 @@ class _SearchscreenState extends State<Searchscreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: TextField(
-        decoration: InputDecoration(
-          hintText: 'Введите название растения',
-        ),
+      body: Column(
+        children: [
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: SizedBox(
+              child: TextField(
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: 'Введите название растения',
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

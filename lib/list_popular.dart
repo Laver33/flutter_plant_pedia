@@ -16,10 +16,6 @@ class ListPopular extends StatelessWidget {
         decoration: BoxDecoration(
           color: AppColors.testCardColor, // цвет карты
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            width: 0.5,
-            style: BorderStyle.solid,
-          ),
         ),
 
         width: 100,
@@ -35,14 +31,14 @@ class ListPopular extends StatelessWidget {
                   Container(
                     decoration: BoxDecoration(
                       color: AppColors.testBgColor, // Цвет под картой
-                      borderRadius: BorderRadius.circular(5)
+                      borderRadius: BorderRadius.circular(10)
                     ),
 
                     child: Padding(
                       padding: const EdgeInsets.all(5),
                       child: Image.asset(
                         imagePath,
-                        height: 70,
+                        height: 65,
                       ),
                     ),
                   )              

@@ -6,6 +6,12 @@ class AppColors {
   static const Color cardColor = Color(0xFFE2FFE9);
 
   // под тесты карт
-  static const Color testBgColor = Color(0xFF2E8B57);
-  static const Color testCardColor = Color(0xFFF0F8F0);
+  static const Color testBgColor = Color.fromARGB(255, 255, 255, 255);
+  static const Color testCardColor = Color.fromARGB(255, 143, 221, 143);
 }
+
+
+          // border: Border.all(
+          //   width: 0.5,
+          //   style: BorderStyle.solid,
+          // ),
