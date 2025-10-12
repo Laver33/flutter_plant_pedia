@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_first_app/Favourites.dart';
 import 'package:my_first_app/Route.dart';
+import 'package:my_first_app/SearchScreen.dart';
 import 'package:my_first_app/Style/CastColors.dart';
 import 'package:my_first_app/Style/String.dart';
 import 'package:my_first_app/list_popular.dart';
@@ -35,6 +37,12 @@ class _StartScreenState extends State<StartScreen> {
 
   int _currentBottomIndex = 1;
 
+  List <Widget> pagesWidget = const [
+    FavouritesScreen(),
+    HomeScreen(),
+    Searchscreen(),
+  ];
+
 
   void _indexSwapBottom (int index){
     setState(() {
@@ -50,7 +58,50 @@ class _StartScreenState extends State<StartScreen> {
           title: Text(RuStrings.AppName),
         ),
 
-        body: SafeArea(
+        body: pagesWidget[_currentBottomIndex],
+
+          bottomNavigationBar: StylishBottomBar(
+            option: DotBarOptions(
+              dotStyle: DotStyle.tile, 
+            ), 
+            items: <BottomBarItem>[
+
+              BottomBarItem(
+                icon: Icon(Icons.heart_broken),
+                title: Text('Избранные')
+              ),
+
+              BottomBarItem(
+                icon: Icon(Icons.home),
+                title: Text('Главная')
+              ),
+
+              BottomBarItem(
+                icon: Icon(Icons.search), 
+                title: Text('Поиск')
+              ),
+            ],
+            currentIndex: _currentBottomIndex,
+            onTap: _indexSwapBottom,            
+            
+            )
+    );
+  }
+}
+
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
           child: Column(
             children: [
               Row(
@@ -92,33 +143,7 @@ class _StartScreenState extends State<StartScreen> {
                 ),
               ),
             ])
-          ),
-
-          bottomNavigationBar: StylishBottomBar(
-            option: DotBarOptions(
-              dotStyle: DotStyle.tile, 
-            ), 
-            items: <BottomBarItem>[
-
-              BottomBarItem(
-                icon: Icon(Icons.heart_broken),
-                title: Text('Избранные')
-              ),
-
-              BottomBarItem(
-                icon: Icon(Icons.home),
-                title: Text('Главная')
-              ),
-
-              BottomBarItem(
-                icon: Icon(Icons.search), 
-                title: Text('Поиск')
-              ),
-            ],
-            currentIndex: _currentBottomIndex,
-            onTap: _indexSwapBottom,            
-
-            )
+      ),
     );
   }
 }
