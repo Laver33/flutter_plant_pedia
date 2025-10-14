@@ -12,7 +12,7 @@ class _FavouritesScreenState extends State<FavouritesScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("data"),
+        child: Text("В разработке..."),
       ),
     );
   }

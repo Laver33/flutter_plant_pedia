@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_first_app/Favourites.dart';
+import 'package:my_first_app/Widgets/list_category.dart';
+import 'package:my_first_app/category_data.dart';
+import 'package:my_first_app/pages/Favourites.dart';
 import 'package:my_first_app/Route.dart';
-import 'package:my_first_app/SearchScreen.dart';
+import 'package:my_first_app/pages/SearchScreen.dart';
 import 'package:my_first_app/Style/CastColors.dart';
 import 'package:my_first_app/Style/String.dart';
-import 'package:my_first_app/list_popular.dart';
+import 'package:my_first_app/Widgets/list_popular.dart';
 import 'package:my_first_app/post_data.dart';
 import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
 
@@ -104,6 +106,36 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
           child: Column(
             children: [
+              Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(35, 10, 0, 5), 
+
+                    child: Text(
+                      RuStrings.PlantCategory,
+                      style: GoogleFonts.poppins(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600
+                      ),
+                      ),
+                  ),
+                ],
+              ),
+
+              SizedBox(
+                height: 150,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: categoryes.length,
+                  itemBuilder: (context, index){
+                    return ListCategory(
+                      title: categoryes[index].title,
+                      imagePath: categoryes[index].imagePath,
+                      );
+                  }
+                  ),
+              ),
+
               Row(
                 children: [
                   Padding(

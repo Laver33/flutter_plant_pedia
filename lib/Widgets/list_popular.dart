@@ -38,20 +38,32 @@ class ListPopular extends StatelessWidget {
                       padding: const EdgeInsets.all(5),
                       child: Image.asset(
                         imagePath,
-                        height: 65,
+                        height: 70,
                       ),
                     ),
                   )              
                 ],
               )
             ),
-            Center(
-              child: Text(title,  
-              style: GoogleFonts.poppins(
-                fontSize: 14,
-                color: Colors.black
+            Padding(
+              padding: const EdgeInsets.all(3),
+              child: Container(
+                height: 25,
+                width: 85,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(8)
+                ),
+              
+                child: Center(
+                  child: Text(title,  
+                  style: GoogleFonts.poppins(
+                    fontSize: 14,
+                    color: Colors.black
+                  ),
+                  )),
               ),
-              )),
+            ),
           ],
         )
 

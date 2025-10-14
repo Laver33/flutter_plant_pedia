@@ -8,7 +8,13 @@ class PostData {
   final String imagePath;
 
   
-  PostData({required this.title, required this.name, required this.description, required this.id, required this.imagePath});
+  PostData({
+    required this.title, 
+    required this.name, 
+    required this.description, 
+    required this.id, 
+    required this.imagePath
+    });
 }
 
 final List<PostData> posts = [
