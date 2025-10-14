@@ -16,26 +16,26 @@ class CategoryData {
 final List<CategoryData> categoryes = [
 
   CategoryData(
-    title: 'Домашние', 
+    title: 'Уличные', 
     id: 1,
-    imagePath: 'lib/assets/Plantimg/Rose.png',
+    imagePath: 'lib/assets/Categoryimg/Outdoor.png',
     ),
 
   CategoryData(
-    title: 'Уличные', 
-    id: 1,
-    imagePath: 'lib/assets/Plantimg/Rose.png',
+    title: 'Комнатные', 
+    id: 2,
+    imagePath: 'lib/assets/Categoryimg/Room.png',
     ),
 
   CategoryData(
     title: 'Офисные', 
-    id: 1,
-    imagePath: 'lib/assets/Plantimg/Rose.png',
+    id: 3,
+    imagePath: 'lib/assets/Categoryimg/Office.png',
     ),
 
   CategoryData(
     title: 'Остальные', 
-    id: 1,
-    imagePath: 'lib/assets/Plantimg/Rose.png',
+    id: 4,
+    imagePath: 'lib/assets/Categoryimg/Other.png',
     ),
 ];

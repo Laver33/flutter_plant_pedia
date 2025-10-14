@@ -14,10 +14,6 @@ class ListCategory extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(5),
       child: Container(
-        decoration: BoxDecoration(
-          color: AppColors.testCardColor, // цвет карты
-          borderRadius: BorderRadius.circular(10),
-        ),
 
         width: 100,
         
@@ -31,39 +27,32 @@ class ListCategory extends StatelessWidget {
                 children: [
                   Container(
                     decoration: BoxDecoration(
-                      color: AppColors.testBgColor, // Цвет под картой
+                      color: AppColors.categoryBgColor, // Цвет под картой
                       borderRadius: BorderRadius.circular(10)
                     ),
 
                     child: Padding(
-                      padding: const EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(15),
                       child: Image.asset(
                         imagePath,
-                        height: 70,
+                        height: 40,
                       ),
                     ),
                   )              
                 ],
               )
             ),
+            
             Padding(
               padding: const EdgeInsets.all(3),
-              child: Container(
-                height: 25,
-                width: 85,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(8)
-                ),
-              
                 child: Center(
                   child: Text(title,  
                   style: GoogleFonts.poppins(
                     fontSize: 14,
                     color: Colors.black
                   ),
-                  )),
-              ),
+                  )
+                ),
             ),
           ],
         )

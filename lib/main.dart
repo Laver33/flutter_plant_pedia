@@ -5,7 +5,6 @@ import 'package:my_first_app/category_data.dart';
 import 'package:my_first_app/pages/Favourites.dart';
 import 'package:my_first_app/Route.dart';
 import 'package:my_first_app/pages/SearchScreen.dart';
-import 'package:my_first_app/Style/CastColors.dart';
 import 'package:my_first_app/Style/String.dart';
 import 'package:my_first_app/Widgets/list_popular.dart';
 import 'package:my_first_app/post_data.dart';
@@ -109,12 +108,12 @@ class _HomeScreenState extends State<HomeScreen> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(35, 10, 0, 5), 
+                    padding: const EdgeInsets.fromLTRB(35, 10, 0, 0), 
 
                     child: Text(
                       RuStrings.PlantCategory,
                       style: GoogleFonts.poppins(
-                        fontSize: 15,
+                        fontSize: 16,
                         fontWeight: FontWeight.w600
                       ),
                       ),
@@ -139,24 +138,15 @@ class _HomeScreenState extends State<HomeScreen> {
               Row(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 10, 0, 5),
+                    padding: const EdgeInsets.fromLTRB(35, 10, 0, 0), 
 
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: AppColors.popularColor,
-                        borderRadius: BorderRadius.circular(20),
+                    child: Text(
+                      RuStrings.PopularPlants,
+                      style: GoogleFonts.poppins(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(15, 8, 15, 8),
-                        child: Text(
-                          RuStrings.PopularPlants, 
-                          style: GoogleFonts.poppins(
-                            fontSize: 15,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w600
-                          ),),
                       ),
-                    ),
                   ),
                 ],
               ),

@@ -8,10 +8,11 @@ class AppColors {
   // под тесты карт
   static const Color testBgColor = Color.fromARGB(255, 255, 255, 255);
   static const Color testCardColor = Color.fromARGB(255, 143, 221, 143);
+
+  // для категорий
+
+  static const Color categoryBgColor = Color.fromARGB(255, 240, 240, 240);
+
 }
 
 
-          // border: Border.all(
-          //   width: 0.5,
-          //   style: BorderStyle.solid,
-          // ),
