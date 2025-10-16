@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_first_app/Widgets/list_category.dart';
 import 'package:my_first_app/category_data.dart';
-import 'package:my_first_app/pages/Favourites.dart';
+import 'package:my_first_app/pages/ProfileScreen.dart';
 import 'package:my_first_app/Route.dart';
 import 'package:my_first_app/pages/SearchScreen.dart';
 import 'package:my_first_app/Style/String.dart';
@@ -39,7 +39,7 @@ class _StartScreenState extends State<StartScreen> {
   int _currentBottomIndex = 1;
 
   List <Widget> pagesWidget = const [
-    FavouritesScreen(),
+    ProfileScreen(),
     HomeScreen(),
     Searchscreen(),
   ];
@@ -68,8 +68,8 @@ class _StartScreenState extends State<StartScreen> {
             items: <BottomBarItem>[
 
               BottomBarItem(
-                icon: Icon(Icons.heart_broken),
-                title: Text('Избранные')
+                icon: Icon(Icons.person_2_outlined),
+                title: Text('Профиль')
               ),
 
               BottomBarItem(
@@ -152,7 +152,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
 
               SizedBox(
-                height: 150,
+                height: 190,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: posts.length,
