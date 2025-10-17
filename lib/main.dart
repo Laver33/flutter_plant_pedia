@@ -7,7 +7,7 @@ import 'package:my_first_app/Route.dart';
 import 'package:my_first_app/pages/SearchScreen.dart';
 import 'package:my_first_app/Style/String.dart';
 import 'package:my_first_app/Widgets/list_popular.dart';
-import 'package:my_first_app/post_data.dart';
+import 'package:my_first_app/data/post_data.dart';
 import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
 
 void main() {
@@ -160,6 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     return ListPopular(
                       title: posts[index].title,
                       imagePath: posts[index].imagePath,
+                      category: posts[index].category,
                     );
                   },
                 ),

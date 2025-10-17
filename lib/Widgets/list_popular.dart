@@ -5,9 +5,10 @@ import 'package:my_first_app/Style/CastColors.dart';
 class ListPopular extends StatefulWidget {
   final String title;
   final String imagePath;
+  final String category;
 
 
-  ListPopular ({required this.title, required this.imagePath});
+  ListPopular ({required this.title, required this.imagePath, required this.category});
 
   @override
   State<ListPopular> createState() => _ListPopularState();
@@ -42,13 +43,13 @@ class _ListPopularState extends State<ListPopular> {
                     height: 20,
                     width: cardWidth / 2 + 5, 
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(5),
                       color: Colors.white
                     ),
                     child: Center(
-                      child: Text("тип", 
+                      child: Text(widget.category, 
                       style:  GoogleFonts.poppins(
-                        fontSize: 14,
+                        fontSize: 12,
                         color: Colors.black
                       ),
                   
@@ -78,7 +79,7 @@ class _ListPopularState extends State<ListPopular> {
             Padding(
               padding: const EdgeInsets.all(3),
               child: Container(
-                height: 25,
+                height: 28,
                 width: 85,
                 decoration: BoxDecoration(
                   color: Colors.white,
