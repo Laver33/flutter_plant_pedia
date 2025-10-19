@@ -12,6 +12,10 @@ abstract class RuStrings {
 
 // Описания
   static const Descript1 = 'Заботься о растениях с умом';
+
+// Страничка: Профиль
+  static const Static = 'Статистика';
+
 }
 
 abstract class EnString {
