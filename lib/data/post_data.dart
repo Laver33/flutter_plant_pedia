@@ -1,5 +1,7 @@
 
 
+import 'package:my_first_app/Style/AppAssets.dart';
+
 class PostData {
   final String title;
   final String name;
@@ -25,7 +27,7 @@ final List<PostData> posts = [
     name: 'Роза садовая',
     description: 'Королева цветов. Кустарник с шипастыми стеблями и ароматными махровыми цветками разнообразных оттенков.', 
     id: 1,
-    imagePath: 'lib/assets/Plantimg/Rose.png',
+    imagePath: AppAssets.rose,
     category: 'Уличная'
     ),
 
@@ -35,7 +37,7 @@ final List<PostData> posts = [
     name: 'Ромашка аптечная', 
     description: 'Полевой цветок с белыми лепестками и желтой сердцевиной. Широко используется в медицине и косметологии.', 
     id: 2,
-    imagePath: 'lib/assets/Plantimg/Chamomile.png',
+    imagePath: AppAssets.chamomile,
     category: 'Уличная'
     ),
   
@@ -44,7 +46,7 @@ final List<PostData> posts = [
     name: 'Гипсофила метельчатая', 
     description: 'Ажурный многолетник с облаком мелких белых цветков. Часто используется как дополнение в букетах.', 
     id: 3,
-    imagePath: 'lib/assets/Plantimg/Breath.png',
+    imagePath: AppAssets.breath,
     category: 'Уличная'
     ),
   
@@ -53,7 +55,7 @@ final List<PostData> posts = [
     name: 'Тюльпан', 
     description: 'Весенний луковичный цветок с ярким бокаловидным бутоном. Символизирует приход весны.', 
     id: 4,
-    imagePath: 'lib/assets/Plantimg/Tulip.png',
+    imagePath: AppAssets.tulip,
     category: 'Уличная'
     ),
   
@@ -62,7 +64,7 @@ final List<PostData> posts = [
     name: 'Пион травянистый', 
     description: 'Крупный пышный цветок с множеством лепестков и насыщенным ароматом. Цветет в начале лета.', 
     id: 5,
-    imagePath: 'lib/assets/Plantimg/Peony.png',
+    imagePath: AppAssets.peony,
     category: 'Уличная'
     ),
   
@@ -71,7 +73,7 @@ final List<PostData> posts = [
     name: 'Лаванда узколистная', 
     description: 'Ароматный многолетний полукустарник с фиолетовыми колосовидными соцветиями. Любит солнце и сухую почву.', 
     id: 6,
-    imagePath: 'lib/assets/Plantimg/Lavender.png',
+    imagePath: AppAssets.lavender,
     category: 'Уличная'
     ),
   
@@ -80,7 +82,7 @@ final List<PostData> posts = [
     name: 'Подсолнечник однолетний', 
     description: 'Высокое растение с крупным желтым соцветием-корзинкой. Поворачивается за солнцем в течение дня.', 
     id: 7,
-    imagePath: 'lib/assets/Plantimg/Sunflower.png',
+    imagePath: AppAssets.sunflower,
     category: 'Уличная'
     ),
   
@@ -89,7 +91,7 @@ final List<PostData> posts = [
     name: 'Сенполия (Узамбарская фиалка)', 
     description: 'Нежное компактное растение с бархатистыми листьями и разноцветными мелкими цветками.', 
     id: 8,
-    imagePath: 'lib/assets/Plantimg/Violet.png',
+    imagePath: AppAssets.violet,
     category: 'Комнатная'
     ),
   
@@ -98,7 +100,7 @@ final List<PostData> posts = [
     name: 'Алоэ Вера', 
     description: 'Сукулент с мясистыми листьями, известный своими лечебными свойствами. Сок используется для заживления ран и ухода за кожей.', 
     id: 9,
-    imagePath: 'lib/assets/Plantimg/Aloe.png',
+    imagePath: AppAssets.aloe,
     category: 'Комнатная'
     ),
   
@@ -107,7 +109,7 @@ final List<PostData> posts = [
     name: 'Кактус', 
     description: 'Пустынное растение, запасающее воду в стебле. Колючки защищают его от животных. Цветет редко, но красиво.', 
     id: 10,
-    imagePath: 'lib/assets/Plantimg/Cactus.png',
+    imagePath: AppAssets.cactus,
     category: 'Офисный'
     ),
 ];
