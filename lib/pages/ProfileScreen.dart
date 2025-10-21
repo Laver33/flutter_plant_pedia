@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_first_app/Style/String.dart';
+import 'package:my_first_app/Widgets/list_%20section.dart';
 import 'package:my_first_app/Widgets/list_stats.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -53,8 +54,21 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 fontSize: 16
               ),
               ),
-            )
+            ),
 
+            SizedBox(
+              height: 20,
+            ),
+
+            ListSection(
+              titleFirst: '',
+              imageFirst: '',
+              colorFirst: Colors.amber,
+
+              titleSecond: '',
+              imageSecond: '',
+              colorSecond: Colors.amber,
+            )
 
           ],
       ))
