@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/Style/AppAssets.dart';
+import 'package:my_first_app/Style/CastColors.dart';
 import 'package:my_first_app/Style/String.dart';
 import 'package:my_first_app/Widgets/list_%20section.dart';
 import 'package:my_first_app/Widgets/list_stats.dart';
@@ -19,7 +21,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
           children: [
             Row(
               children: [
-                Text(RuStrings.Static)
+                Padding(
+
+                  padding: const EdgeInsets.fromLTRB(35, 0, 0, 0),
+                  child: Text(RuStrings.Static, 
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16
+                  ),
+                  ),
+                )
               ],
             ),
 
@@ -48,26 +60,39 @@ class _ProfileScreenState extends State<ProfileScreen> {
               ),
             ),
 
-            Center(
-              child: Text('Разделы', style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: 16
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Center(
+                child: Text('Разделы', style: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: 16
+                ),
+                ),
               ),
-              ),
-            ),
-
-            SizedBox(
-              height: 20,
             ),
 
             ListSection(
-              titleFirst: '',
-              imageFirst: '',
-              colorFirst: Colors.amber,
+              titleFirst: RuStrings.sectionsTitles[0],
+              imageFirst: AppAssets.plantsImg,
+              colorFirst: AppColors.plantsColor,
 
-              titleSecond: '',
-              imageSecond: '',
-              colorSecond: Colors.amber,
+              titleSecond: RuStrings.sectionsTitles[1],
+              imageSecond: AppAssets.calendarImg,
+              colorSecond: AppColors.calendarColor,
+            ),
+
+            SizedBox(
+              height: 30,
+            ),
+
+            ListSection(
+              titleFirst: RuStrings.sectionsTitles[2],
+              imageFirst: AppAssets.recordingImg, 
+              colorFirst: AppColors.recordingColor,
+
+              titleSecond: RuStrings.sectionsTitles[3],
+              imageSecond: AppAssets.settingsImg, 
+              colorSecond: AppColors.settingsColor, 
             )
 
           ],

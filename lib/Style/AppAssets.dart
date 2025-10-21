@@ -1,5 +1,8 @@
 abstract class AppAssets {
   static const String basePath = 'lib/assets/';
+
+  // Старт экран
+  static String preImage = '${basePath}images/Pic.png';
   
   // Растения
   static String rose = '${basePath}Plantimg/Rose.png';
@@ -16,4 +19,10 @@ abstract class AppAssets {
   // Категории
   static String outdoor = '${basePath}Categoryimg/Outdoor.png';
   static String room = '${basePath}Categoryimg/Room.png';
+
+  // Разделы в профиле
+  static String calendarImg = '${basePath}images/Calendar.png';
+  static String plantsImg = '${basePath}images/Plants.png';
+  static String recordingImg = '${basePath}images/Recording.png';
+  static String settingsImg = '${basePath}images/Settings.png';  
 }

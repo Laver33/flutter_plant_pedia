@@ -13,6 +13,12 @@ class AppColors {
 
   static const Color categoryBgColor = Color.fromARGB(255, 240, 240, 240);
 
+  // Цвета для разделов
+
+  static const Color calendarColor = Color(0xFFCDEAFF);
+  static const Color plantsColor = Color(0xFFB1E8B5);
+  static const Color settingsColor = Color(0xFFD9D9D9);
+  static const Color recordingColor = Color(0xFFFFE3B8);  
 }
 
 

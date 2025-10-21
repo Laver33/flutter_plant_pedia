@@ -43,7 +43,42 @@ class _ListSectionState extends State<ListSection> {
 
             boxShadow: [
               BoxShadow(
-                color: Colors.black,
+                color: Colors.grey,
+                blurRadius: 3,
+                offset: Offset(3, 3),
+                spreadRadius: 0.5,
+              )
+            ]
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+
+            children: [
+
+              Image.asset(
+                widget.imageFirst,
+                height: 32,
+                ),
+                
+                SizedBox(
+                  height: 10,
+                ),
+
+              Text(widget.titleFirst)
+            ],
+          ),
+        ),
+
+        Container(
+          height: 150,
+          width: 150,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: widget.colorSecond,
+            
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
                 blurRadius: 3,
                 offset: Offset(3, 3),
                 spreadRadius: 0.5,
@@ -60,35 +95,8 @@ class _ListSectionState extends State<ListSection> {
                 height: 32,
                 ),
 
-              Text(widget.titleFirst)
-            ],
-          ),
-        ),
-
-        Container(
-          height: 150,
-          width: 150,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: widget.colorFirst,
-            
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black,
-                blurRadius: 3,
-                offset: Offset(3, 3),
-                spreadRadius: 0.5,
-              )
-            ]
-          ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-
-            children: [
-
-              Image.asset(
-                widget.imageSecond,
-                height: 32,
+                SizedBox(
+                  height: 10,
                 ),
 
               Text(widget.titleSecond)

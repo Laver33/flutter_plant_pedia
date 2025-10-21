@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:my_first_app/Style/AppAssets.dart';
 import 'package:my_first_app/Style/CastColors.dart';
 import 'package:my_first_app/Style/String.dart';
 
@@ -11,7 +12,6 @@ class LoadScreen extends StatefulWidget {
 }
 
 class _LoadScreenState extends State<LoadScreen> {
-  final String preImages = 'lib/assets/images/Pic.png';
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class _LoadScreenState extends State<LoadScreen> {
 
                 Center(
                   child: Container(
-                    child: Image.asset(preImages),
+                    child: Image.asset(AppAssets.preImage),
                   ),
                 ),
                 const SizedBox(height: 20),

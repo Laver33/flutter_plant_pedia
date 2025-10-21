@@ -16,6 +16,9 @@ abstract class RuStrings {
 // Страничка: Профиль
   static const Static = 'Статистика';
 
+  // Разделы
+  static const sectionsTitles = ['Мои растения', 'Календарь', 'Мои записи', 'Настройки'];
+
 }
 
 abstract class EnString {

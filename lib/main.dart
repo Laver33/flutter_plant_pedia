@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_first_app/Widgets/list_category.dart';
-import 'package:my_first_app/category_data.dart';
+import 'package:my_first_app/data/category_data.dart';
 import 'package:my_first_app/pages/ProfileScreen.dart';
 import 'package:my_first_app/Route.dart';
 import 'package:my_first_app/pages/SearchScreen.dart';
