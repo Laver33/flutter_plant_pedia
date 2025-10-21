@@ -22,7 +22,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Row(
               children: [
                 Padding(
-
                   padding: const EdgeInsets.fromLTRB(35, 0, 0, 0),
                   child: Text(RuStrings.Static, 
                   style: TextStyle(

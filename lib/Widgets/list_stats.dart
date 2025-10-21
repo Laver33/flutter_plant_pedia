@@ -22,10 +22,17 @@ class _ListStatsState extends State<ListStats> {
       width: 110,
 
       decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.black
-        ),
-        borderRadius: BorderRadius.circular(10)
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey,
+            blurRadius: 2,
+            offset: Offset(1, 1),
+            spreadRadius: 0.5,
+          )
+        ]
       ),
 
       child: Column(
@@ -40,3 +47,10 @@ class _ListStatsState extends State<ListStats> {
     );
   }
 }
+
+// BoxDecoration(
+//         border: Border.all(
+//           color: Colors.black
+//         ),
+//         borderRadius: BorderRadius.circular(10)
+//       ),
