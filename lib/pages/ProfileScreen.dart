@@ -74,10 +74,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
               titleFirst: RuStrings.sectionsTitles[0],
               imageFirst: AppAssets.plantsImg,
               colorFirst: AppColors.plantsColor,
+              navigateFirst: '/settings',
 
               titleSecond: RuStrings.sectionsTitles[1],
               imageSecond: AppAssets.calendarImg,
               colorSecond: AppColors.calendarColor,
+              navigateSecond: '/settings',
             ),
 
             SizedBox(
@@ -88,10 +90,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
               titleFirst: RuStrings.sectionsTitles[2],
               imageFirst: AppAssets.recordingImg, 
               colorFirst: AppColors.recordingColor,
+              navigateFirst: '/settings',
 
               titleSecond: RuStrings.sectionsTitles[3],
               imageSecond: AppAssets.settingsImg, 
               colorSecond: AppColors.settingsColor, 
+              navigateSecond: '/settings',
             )
 
           ],

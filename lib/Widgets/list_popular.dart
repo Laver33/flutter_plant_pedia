@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_first_app/Style/CastColors.dart';
 
@@ -16,7 +17,6 @@ class ListPopular extends StatefulWidget {
 
 class _ListPopularState extends State<ListPopular> {
 
-  // Переменные
   double cardWidth = 120;
   
 
@@ -24,7 +24,12 @@ class _ListPopularState extends State<ListPopular> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.all(5),
-      child: Container(
+      child: GestureDetector(
+        onTap: () {
+          context.push('/test');
+        },
+
+        child: Container(
         decoration: BoxDecoration(
           color: AppColors.testCardColor, // цвет карты
           borderRadius: BorderRadius.circular(10),
@@ -97,10 +102,8 @@ class _ListPopularState extends State<ListPopular> {
             ),
           ],
         )
-
-      ));
-  }
+      )
+      )
+    );
+  } 
 }
-
-
-
