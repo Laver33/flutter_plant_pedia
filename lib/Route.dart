@@ -2,7 +2,8 @@ import 'package:go_router/go_router.dart';
 import 'package:my_first_app/Widgets/card.dart';
 import 'package:my_first_app/pages/LoadScreen.dart';
 import 'package:my_first_app/main.dart';
-import 'package:my_first_app/pages/SettingsScreen.dart';
+import 'package:my_first_app/pages/sections/PlantsScreen.dart';
+import 'package:my_first_app/pages/sections/SettingsScreen.dart';
 
 final goRouter = GoRouter(
   routes: [
@@ -21,7 +22,7 @@ final goRouter = GoRouter(
     
     GoRoute(
       path: '/plant',
-      builder: (context, state) => SettingsScreen(),
+      builder: (context, state) => PlantsScreen(),
     ), 
     GoRoute(
       path: '/calendar',
