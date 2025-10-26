@@ -7,9 +7,15 @@ class ListPopular extends StatefulWidget {
   final String title;
   final String imagePath;
   final String category;
+  final int indexId;
 
 
-  ListPopular ({required this.title, required this.imagePath, required this.category});
+  ListPopular ({
+    required this.title, 
+    required this.imagePath, 
+    required this.category,
+    required this.indexId,
+    });
 
   @override
   State<ListPopular> createState() => _ListPopularState();
@@ -26,7 +32,7 @@ class _ListPopularState extends State<ListPopular> {
       padding: EdgeInsets.all(5),
       child: GestureDetector(
         onTap: () {
-          context.push('/test');
+          context.push('/cards/${widget.indexId}');
         },
 
         child: Container(
@@ -97,7 +103,8 @@ class _ListPopularState extends State<ListPopular> {
                     fontSize: 14,
                     color: Colors.black
                   ),
-                  )),
+                  )
+                ),
               ),
             ),
           ],
