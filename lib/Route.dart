@@ -31,7 +31,8 @@ final goRouter = GoRouter(
           namePlant: cards.name,
           descripPlant: cards.description, 
           climatePlant: cards.category , 
-          specialPlant: cards.category
+          specialPlant: cards.category,
+          imagePlant: cards.imagePath,
         );
       }
     ), 
@@ -51,5 +52,9 @@ final goRouter = GoRouter(
       path: '/settings',
       builder: (context, state) => SettingsScreen(),
     ), 
+
+    // Категории
+
+    
   ],
 );

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_first_app/Style/CastColors.dart';
 
 class ListPopular extends StatefulWidget {
   final String title;
@@ -36,9 +35,20 @@ class _ListPopularState extends State<ListPopular> {
         },
 
         child: Container(
+
         decoration: BoxDecoration(
-          color: AppColors.testCardColor, // цвет карты
           borderRadius: BorderRadius.circular(10),
+          color: Colors.white,
+
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black,
+              blurRadius: 1,
+              offset: Offset(0.5, 0.5),
+              spreadRadius: 0.2,      
+            )
+          ],
+
         ),
 
         width: cardWidth,
@@ -52,15 +62,20 @@ class _ListPopularState extends State<ListPopular> {
                   padding: EdgeInsets.fromLTRB(10, 8, 0, 8),
                   child: Container(
                     height: 20,
-                    width: cardWidth / 2 + 5, 
+                    width: cardWidth / 2 + 10, 
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(5),
-                      color: Colors.white
+                      color: Colors.white,
+
+                      border: Border.all(
+                        color: Colors.black,
+                        width: 0.2
+                      )
                     ),
                     child: Center(
                       child: Text(widget.category, 
                       style:  GoogleFonts.poppins(
-                        fontSize: 12,
+                        fontSize: 11,
                         color: Colors.black
                       ),
                   

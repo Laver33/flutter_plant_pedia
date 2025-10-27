@@ -14,7 +14,7 @@ abstract class AppAssets {
   static String sunflower = '${basePath}Plantimg/Sunflower.png';
   static String violet = '${basePath}Plantimg/Violet.png';
   static String aloe = '${basePath}Plantimg/Aloe.png';
-  static String cactus = '${basePath}PPlantimg/Cactus.png';
+  static String cactus = '${basePath}Plantimg/Cactus.png';
   
   // Категории
   static String outdoor = '${basePath}Categoryimg/Outdoor.png';

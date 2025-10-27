@@ -162,6 +162,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       imagePath: posts[index].imagePath,
                       category: posts[index].category,
                       indexId: posts[index].id,
+                      
                     );
                   },
                 ),
