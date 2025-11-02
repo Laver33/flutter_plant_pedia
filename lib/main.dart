@@ -32,6 +32,17 @@ class StartScreen extends StatefulWidget {
   State<StartScreen> createState() => _StartScreenState();
 }
 
+// class CastAppBar extends StatelessWidget {
+//   const CastAppBar({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//   return AppBar(
+//     title: Text(RuStrings.AppName),
+//     );
+//   }
+// }
+
 
 
 class _StartScreenState extends State<StartScreen> {

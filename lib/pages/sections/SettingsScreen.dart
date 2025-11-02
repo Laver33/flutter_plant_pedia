@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_app/Style/String.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -11,9 +12,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(RuStrings.sectionsTitles[3]),
+      ),
       body: SafeArea(
         child: Center(
-          child: Text('data'),
+          child: Text('настройки'),
         ),
       )
     );
