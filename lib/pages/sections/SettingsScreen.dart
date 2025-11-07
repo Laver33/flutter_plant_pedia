@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_first_app/Style/String.dart';
+import 'package:toggle_switch/toggle_switch.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -86,8 +87,42 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     Container(
                       height: ContainerOptionsSize / 2 - (DividerSize / 2),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Text('data')
+
+                          Text(
+                              RuStrings.settingsTitles[0]
+                          ),
+
+                          Container(
+                            child: ToggleSwitch(
+                              minWidth: 60,
+                              cornerRadius: 20,
+                              activeFgColor: Colors.white,
+                              activeBgColors: [
+                                [Colors.green],
+                                [Colors.red],
+                              ],
+                              inactiveBgColor: Colors.grey,
+                              inactiveFgColor: Colors.white,
+                              initialLabelIndex: 0,
+                              totalSwitches: 2,
+                              labels: ['Ru', 'Eng'],
+                              onToggle: (index){
+                                String res = ' ';
+
+                                if (index == 0) {
+                                  res = 'Ru';
+                                }
+                                else {
+                                  res = 'Eng';
+                                }
+
+                                print('Язык: $res');
+                              },
+                            ),
+                          )
+
                         ],
                       ),
                     ),
@@ -99,8 +134,42 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     Container(
                       height: ContainerOptionsSize / 2 - (DividerSize / 2),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          Text('data')
+
+                          Text(
+                            RuStrings.settingsTitles[1]
+                          ),
+
+                          Container(
+                            child: ToggleSwitch(
+                              minWidth: 70,
+                              cornerRadius: 10,
+                              activeFgColor: Colors.white,
+                              activeBgColors: [
+                                [Colors.green],
+                                [Colors.red],
+                              ],
+                              inactiveBgColor: Colors.grey,
+                              inactiveFgColor: Colors.white,
+                              initialLabelIndex: 0,
+                              totalSwitches: 2,
+                              labels: ['Defoult', 'Black'],
+                              onToggle: (index){
+                                String res = ' ';
+
+                                if (index == 0) {
+                                  res = 'Defoult';
+                                }
+                                else {
+                                  res = 'Black';
+                                }
+
+                                print('Стиль: $res');
+                              },
+                            ),
+                          ),
+
                         ],
                       ),
                     ),

@@ -19,6 +19,9 @@ abstract class RuStrings {
   // Разделы
   static const sectionsTitles = ['Мои растения', 'Календарь', 'Мои записи', 'Настройки'];
 
+// Страничка: Настройки
+  static const settingsTitles = ['Переключения языка', 'Переключение стиля'];
+
 }
 
 abstract class EnString {
