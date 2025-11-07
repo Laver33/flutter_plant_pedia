@@ -18,6 +18,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final screenWidth = MediaQuery.of(context).size.width;
     // final screenHeight = MediaQuery.of(context).size.height;
 
+    final double ContainerOptionsSize = 150;
+    final double DividerSize = 2;
+
     return Scaffold(
       appBar: AppBar(
         title: Text(RuStrings.sectionsTitles[3]),
@@ -27,14 +30,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
         child: Column(
           children: [
 
-            Padding(padding: EdgeInsetsGeometry.all(10),
-            child: Container(
+            // Окно настроек
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Container(
               width: screenWidth,
               height: 150,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20)
               ),
+              
               child: Row(
                 children: [
                   Padding(
@@ -64,8 +70,44 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ),
             ),
 
-            Text(
-              'f'
+            // Сами настройки
+            Padding(
+              padding: const EdgeInsets.all(10),
+              child: Container(
+                height: ContainerOptionsSize,
+                width: screenWidth,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20)
+                ),
+                child: Column(
+                  children: [
+
+                    Container(
+                      height: ContainerOptionsSize / 2 - (DividerSize / 2),
+                      child: Row(
+                        children: [
+                          Text('data')
+                        ],
+                      ),
+                    ),
+
+                    Divider(
+                      height: 2,
+                    ),
+
+                    Container(
+                      height: ContainerOptionsSize / 2 - (DividerSize / 2),
+                      child: Row(
+                        children: [
+                          Text('data')
+                        ],
+                      ),
+                    ),
+
+                  ],
+                ),
+              ),
             )
 
 
