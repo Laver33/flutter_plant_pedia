@@ -33,7 +33,7 @@ dependencies:
   go_router: ^16.2.4
   google_fonts: ^6.3.2
   stylish_bottom_bar: ^1.1.1
-  toggle_switch: ^2.3.0
+  animated_toggle_switch: ^0.8.5
     
 
   # The following adds the Cupertino Icons font to your application.

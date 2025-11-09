@@ -1,7 +1,7 @@
+import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:my_first_app/Style/String.dart';
-import 'package:toggle_switch/toggle_switch.dart';
 
 class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key});
@@ -12,7 +12,11 @@ class SettingsScreen extends StatefulWidget {
 
 class _SettingsScreenState extends State<SettingsScreen> {
 
+    // Switch №1
 
+
+    // Switch №2
+    bool currentNum2 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -21,6 +25,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     final double ContainerOptionsSize = 150;
     final double DividerSize = 2;
+
+
 
     return Scaffold(
       appBar: AppBar(
@@ -74,18 +80,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
             // Сами настройки
             Padding(
               padding: const EdgeInsets.all(10),
-              child: Container(
-                height: ContainerOptionsSize,
-                width: screenWidth,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(20)
-                ),
+
                 child: Column(
                   children: [
 
                     Container(
                       height: ContainerOptionsSize / 2 - (DividerSize / 2),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -95,81 +99,73 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           ),
 
                           Container(
-                            child: ToggleSwitch(
-                              minWidth: 60,
-                              cornerRadius: 20,
-                              activeFgColor: Colors.white,
-                              activeBgColors: [
-                                [Colors.green],
-                                [Colors.red],
-                              ],
-                              inactiveBgColor: Colors.grey,
-                              inactiveFgColor: Colors.white,
-                              initialLabelIndex: 0,
-                              totalSwitches: 2,
-                              labels: ['Ru', 'Eng'],
-                              onToggle: (index){
-                                String res = ' ';
-
-                                if (index == 0) {
-                                  res = 'Ru';
-                                }
-                                else {
-                                  res = 'Eng';
-                                }
-
-                                print('Язык: $res');
-                              },
-                            ),
                           )
 
                         ],
                       ),
                     ),
 
-                    Divider(
-                      height: 2,
+                    SizedBox(
+                      height: 10,
                     ),
 
                     Container(
-                      height: ContainerOptionsSize / 2 - (DividerSize / 2),
+                      height: ContainerOptionsSize / 2,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)
+                      ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
 
                           Text(
-                            RuStrings.settingsTitles[1]
+                            RuStrings.settingsTitles[1],
                           ),
 
                           Container(
-                            child: ToggleSwitch(
-                              minWidth: 70,
-                              cornerRadius: 10,
-                              activeFgColor: Colors.white,
-                              activeBgColors: [
-                                [Colors.green],
-                                [Colors.red],
-                              ],
-                              inactiveBgColor: Colors.grey,
-                              inactiveFgColor: Colors.white,
-                              initialLabelIndex: 0,
-                              totalSwitches: 2,
-                              labels: ['Defoult', 'Black'],
-                              onToggle: (index){
-                                String res = ' ';
+                            child: AnimatedToggleSwitch<bool>.dual(
+                              current: currentNum2, 
+                              first: false, 
+                              second: true,
+                              spacing: 30,
+                              height: ContainerOptionsSize / 4,
+                              borderWidth: 3,
+                              
 
-                                if (index == 0) {
-                                  res = 'Defoult';
-                                }
-                                else {
-                                  res = 'Black';
-                                }
+                              style: ToggleStyle(
+                                borderColor: Colors.transparent,
+                                backgroundColor: Colors.white,
+                                boxShadow: [
 
-                                print('Стиль: $res');
-                              },
-                            ),
+                                  BoxShadow(
+                                    color: Colors.black,
+                                    spreadRadius: 1,
+                                    blurRadius: 2,
+                                    offset: Offset(0, 0.1)
+                                  )
+                                ],
+                              ),
+                              onChanged: (ind) => setState(() => currentNum2 = ind),
+                              
+                              styleBuilder: (ind) => ToggleStyle(indicatorColor: ind ? Colors.red : Colors.green ),
+                          
+                              textBuilder: (ind) => ind ?
+                              Center(
+                                child: Text(RuStrings.SwitchText2[0], 
+                                style: GoogleFonts.poppins(
+                                  fontSize: 12
+                                ),)) 
+
+                              : Center(child:  Text(RuStrings.SwitchText2[1],
+                              style: GoogleFonts.poppins(
+                                fontSize: 12
+                              ),)),
+                              
+
+
+                              )
                           ),
-
                         ],
                       ),
                     ),
@@ -177,9 +173,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   ],
                 ),
               ),
-            )
-
-
           ],
         )
       )

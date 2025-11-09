@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 abstract class RuStrings {
 
   static const PopularPlants = 'Популярные';
@@ -21,6 +23,7 @@ abstract class RuStrings {
 
 // Страничка: Настройки
   static const settingsTitles = ['Переключения языка', 'Переключение стиля'];
+  static const SwitchText2 = ['Темный', 'Обычный'];
 
 }
 
