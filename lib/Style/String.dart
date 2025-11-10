@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 abstract class RuStrings {
 
@@ -19,11 +18,13 @@ abstract class RuStrings {
   static const Static = 'Статистика';
 
   // Разделы
-  static const sectionsTitles = ['Мои растения', 'Календарь', 'Мои записи', 'Настройки'];
+  static const sectionsTitles = ['Мои растения', 'Календарь', 'Блокнот', 'Настройки'];
 
 // Страничка: Настройки
   static const settingsTitles = ['Переключения языка', 'Переключение стиля'];
-  static const SwitchText2 = ['Темный', 'Обычный'];
+
+  static const SwitchText1 = ['Анг', 'Руск'];
+  static const SwitchText2 = ['Ночь', 'День'];
 
 }
 

@@ -90,7 +90,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               titleFirst: RuStrings.sectionsTitles[2],
               imageFirst: AppAssets.recordingImg, 
               colorFirst: AppColors.recordingColor,
-              navigateFirst: '/settings',
+              navigateFirst: '/record',
 
               titleSecond: RuStrings.sectionsTitles[3],
               imageSecond: AppAssets.settingsImg, 

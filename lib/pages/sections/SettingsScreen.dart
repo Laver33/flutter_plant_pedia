@@ -10,13 +10,21 @@ class SettingsScreen extends StatefulWidget {
   State<SettingsScreen> createState() => _SettingsScreenState();
 }
 
+
 class _SettingsScreenState extends State<SettingsScreen> {
 
     // Switch №1
-
+    bool currentNum1 = false;
 
     // Switch №2
     bool currentNum2 = false;
+
+
+    static const TextStyle _textStyle = TextStyle(
+      fontFamily: 'Poppins',
+      fontSize: 12,
+    );
+
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +33,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
     final double ContainerOptionsSize = 150;
     final double DividerSize = 2;
-
 
 
     return Scaffold(
@@ -99,6 +106,44 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           ),
 
                           Container(
+                            child: AnimatedToggleSwitch.dual(
+                              current: currentNum1, 
+                              first: false, 
+                              second: true,
+                              spacing: 10,
+                              height: ContainerOptionsSize / 4,
+                              borderWidth: 2,
+                              
+
+                              style: ToggleStyle(
+                                borderColor: Colors.transparent,
+                                backgroundColor: Colors.white,
+                                boxShadow: [
+
+                                  BoxShadow(
+                                    color: Colors.black,
+                                    spreadRadius: 1,
+                                    blurRadius: 2,
+                                    offset: Offset(0, 0.1)
+                                  )
+                                ],
+                              ),
+                              onChanged: (ind) => setState(() => currentNum1 = ind),
+                              
+                              styleBuilder: (ind) => ToggleStyle(indicatorColor: ind ? Colors.red : Colors.green ),
+                          
+                              textBuilder: (ind) => ind ?
+                              Center(
+                                child: Text(RuStrings.SwitchText1[0], 
+                                style: _textStyle)
+                              ) 
+
+                              : Center(child:  Text(RuStrings.SwitchText1[1],
+                              style: GoogleFonts.poppins(
+                                fontSize: 12
+                              ),)),
+                              
+                            ),
                           )
 
                         ],
@@ -115,6 +160,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10)
                       ),
+                      
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -128,9 +174,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               current: currentNum2, 
                               first: false, 
                               second: true,
-                              spacing: 30,
+                              spacing: 10,
                               height: ContainerOptionsSize / 4,
-                              borderWidth: 3,
+                              borderWidth: 2,
                               
 
                               style: ToggleStyle(
@@ -153,23 +199,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               textBuilder: (ind) => ind ?
                               Center(
                                 child: Text(RuStrings.SwitchText2[0], 
-                                style: GoogleFonts.poppins(
-                                  fontSize: 12
-                                ),)) 
+                                style: _textStyle)
+                              ) 
 
                               : Center(child:  Text(RuStrings.SwitchText2[1],
                               style: GoogleFonts.poppins(
                                 fontSize: 12
                               ),)),
                               
-
-
-                              )
+                            )
                           ),
                         ],
                       ),
                     ),
-
                   ],
                 ),
               ),
