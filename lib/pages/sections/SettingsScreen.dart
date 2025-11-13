@@ -1,17 +1,19 @@
 import 'package:animated_toggle_switch/animated_toggle_switch.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:my_first_app/Style/String.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:my_first_app/main.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class SettingsScreen extends StatefulWidget {
+class SettingsScreen extends ConsumerStatefulWidget {
   const SettingsScreen({super.key});
 
   @override
-  State<SettingsScreen> createState() => _SettingsScreenState();
+  ConsumerState<SettingsScreen> createState() => _SettingsScreenState();
 }
 
 
-class _SettingsScreenState extends State<SettingsScreen> {
+class _SettingsScreenState extends ConsumerState<SettingsScreen> {
 
     // Switch №1
     bool currentNum1 = false;
@@ -25,6 +27,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
       fontSize: 12,
     );
 
+    void _saveLanguagePreference(String locale) async {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('language', locale);
+    }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +42,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
     final double ContainerOptionsSize = 150;
     final double DividerSize = 2;
 
+    final localizations = ref.watch(localizationProvider);
+
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(RuStrings.sectionsTitles[3]),
+        title: Text(localizations.sectionsTitles[3]),
       ),
       backgroundColor: const Color.fromARGB(255, 237, 237, 237),
       body: SafeArea(
@@ -102,7 +112,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         children: [
 
                           Text(
-                              RuStrings.settingsTitles[0]
+                              localizations.settingsTitles[0]
                           ),
 
                           Container(
@@ -113,13 +123,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                               spacing: 10,
                               height: ContainerOptionsSize / 4,
                               borderWidth: 2,
-                              
 
                               style: ToggleStyle(
                                 borderColor: Colors.transparent,
                                 backgroundColor: Colors.white,
                                 boxShadow: [
-
                                   BoxShadow(
                                     color: Colors.black,
                                     spreadRadius: 1,
@@ -128,21 +136,31 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                   )
                                 ],
                               ),
-                              onChanged: (ind) => setState(() => currentNum1 = ind),
+                              
+                              onChanged: (ind) {
+                                setState(() => currentNum1 = ind);
+                                
+                                final newLocale = ind ? 'en' : 'ru';
+                                ref.read(currentLocaleProvider.notifier).state = newLocale;
+                                
+                                _saveLanguagePreference(newLocale);
+                              },
                               
                               styleBuilder: (ind) => ToggleStyle(indicatorColor: ind ? Colors.red : Colors.green ),
-                          
-                              textBuilder: (ind) => ind ?
-                              Center(
-                                child: Text(RuStrings.SwitchText1[0], 
-                                style: _textStyle)
-                              ) 
 
-                              : Center(child:  Text(RuStrings.SwitchText1[1],
-                              style: GoogleFonts.poppins(
-                                fontSize: 12
-                              ),)),
-                              
+                              textBuilder: (ind) => ind ?
+                                Center(
+                                  child: Text(
+                                    localizations.switchText1[0], 
+                                    style: _textStyle
+                                  )
+                                ) 
+                                : Center(
+                                  child: Text(
+                                    localizations.switchText1[1], 
+                                    style: GoogleFonts.poppins(fontSize: 12),
+                                  ),
+                                ),
                             ),
                           )
 
@@ -166,7 +184,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         children: [
 
                           Text(
-                            RuStrings.settingsTitles[1],
+                            localizations.settingsTitles[1],
                           ),
 
                           Container(
@@ -198,11 +216,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                           
                               textBuilder: (ind) => ind ?
                               Center(
-                                child: Text(RuStrings.SwitchText2[0], 
+                                child: Text(localizations.switchText2[0], 
                                 style: _textStyle)
                               ) 
 
-                              : Center(child:  Text(RuStrings.SwitchText2[1],
+                              : Center(child:  Text(localizations.switchText2[1],
                               style: GoogleFonts.poppins(
                                 fontSize: 12
                               ),)),

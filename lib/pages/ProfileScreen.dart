@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_first_app/Style/AppAssets.dart';
 import 'package:my_first_app/Style/CastColors.dart';
-import 'package:my_first_app/Style/String.dart';
 import 'package:my_first_app/Widgets/list_%20section.dart';
 import 'package:my_first_app/Widgets/list_stats.dart';
+import 'package:my_first_app/main.dart';
 
-class ProfileScreen extends StatefulWidget {
+class ProfileScreen extends ConsumerStatefulWidget {
   const ProfileScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  ConsumerState<ProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfileScreenState extends ConsumerState<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
+
+    final localizations = ref.watch(localizationProvider);
+
     return Scaffold(
       body: SafeArea(
         child: Column(
@@ -23,7 +27,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               children: [
                 Padding(
                   padding: const EdgeInsets.fromLTRB(35, 0, 0, 0),
-                  child: Text(RuStrings.Static, 
+                  child: Text(localizations.static, 
                   style: TextStyle(
                     color: Colors.black,
                     fontWeight: FontWeight.w600,
@@ -71,12 +75,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
 
             ListSection(
-              titleFirst: RuStrings.sectionsTitles[0],
+              titleFirst: localizations.sectionsTitles[0],
               imageFirst: AppAssets.plantsImg,
               colorFirst: AppColors.plantsColor,
               navigateFirst: '/settings',
 
-              titleSecond: RuStrings.sectionsTitles[1],
+              titleSecond: localizations.sectionsTitles[1],
               imageSecond: AppAssets.calendarImg,
               colorSecond: AppColors.calendarColor,
               navigateSecond: '/settings',
@@ -87,12 +91,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
 
             ListSection(
-              titleFirst: RuStrings.sectionsTitles[2],
+              titleFirst: localizations.sectionsTitles[2],
               imageFirst: AppAssets.recordingImg, 
               colorFirst: AppColors.recordingColor,
               navigateFirst: '/record',
 
-              titleSecond: RuStrings.sectionsTitles[3],
+              titleSecond: localizations.sectionsTitles[3],
               imageSecond: AppAssets.settingsImg, 
               colorSecond: AppColors.settingsColor, 
               navigateSecond: '/settings',

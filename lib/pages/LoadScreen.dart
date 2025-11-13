@@ -1,20 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_first_app/Style/AppAssets.dart';
 import 'package:my_first_app/Style/CastColors.dart';
-import 'package:my_first_app/Style/String.dart';
+import 'package:my_first_app/main.dart';
 
-class LoadScreen extends StatefulWidget {
+class LoadScreen extends ConsumerStatefulWidget {
   LoadScreen({super.key});
 
   @override
-  State<LoadScreen> createState() => _LoadScreenState();
+  ConsumerState<LoadScreen> createState() => _LoadScreenState();
 }
 
-class _LoadScreenState extends State<LoadScreen> {
+class _LoadScreenState extends ConsumerState<LoadScreen> {
 
   @override
   Widget build(BuildContext context) {
+    
+    final localizations = ref.watch(localizationProvider);
+    
     return Scaffold(
         body: Stack(
           children: [
@@ -34,7 +38,7 @@ class _LoadScreenState extends State<LoadScreen> {
 
                 RichText(
                   text: TextSpan(
-                    text: RuStrings.AppNameFirst,
+                    text: localizations.appNameFirst,
                     style: TextStyle(
                       color: Colors.green,
                       fontWeight: FontWeight.w500,
@@ -43,7 +47,7 @@ class _LoadScreenState extends State<LoadScreen> {
 
                     children: <TextSpan>[
                       TextSpan(
-                        text: RuStrings.AppNameEnd,
+                        text: localizations.appNameEnd,
                         style: TextStyle(
                           color: const Color.fromRGBO(0, 0, 0, 1),
                           fontSize: 22,
@@ -56,7 +60,7 @@ class _LoadScreenState extends State<LoadScreen> {
 
                 const SizedBox(height: 20),
                 Text(
-                  RuStrings.Descript1,
+                  localizations.descript1,
                   style: TextStyle(
                     color: const Color.fromARGB(255, 101, 101, 101),
                     fontSize: 16,

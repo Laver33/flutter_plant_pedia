@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_app/Style/String.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:my_first_app/main.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class RecordScreen extends StatefulWidget {
+class RecordScreen extends ConsumerStatefulWidget {
   const RecordScreen({super.key});
 
   @override
-  State<RecordScreen> createState() => _RecordScreenState();
+  ConsumerState<RecordScreen> createState() => _RecordScreenState();
 }
 
-class _RecordScreenState extends State<RecordScreen> {
+class _RecordScreenState extends ConsumerState<RecordScreen> {
 
   TextEditingController _textController = TextEditingController();
 
@@ -39,9 +40,12 @@ class _RecordScreenState extends State<RecordScreen> {
 
   @override
   Widget build(BuildContext context) {
+
+    final localizations = ref.watch(localizationProvider);
+  
     return  Scaffold(
       appBar: AppBar(
-        title: Text(RuStrings.sectionsTitles[2]),
+        title: Text(localizations.sectionsTitles[2]),
       ),
       body: SafeArea(
         child: Padding(
