@@ -20,8 +20,9 @@ final localizationProvider = Provider<AppLocalizations>((ref) {
   return localizationMap[currentLocale]!;
 });
 
+
 void main() {
-  runApp(const ProviderScope(child: MyApp())); // УБРАЛ лишние скобки
+  runApp(const ProviderScope(child: MyApp())); 
 }
 
 class MyApp extends StatelessWidget {
@@ -36,7 +37,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// ИЗМЕНИ НА ConsumerStatefulWidget
 class StartScreen extends ConsumerStatefulWidget {
   @override
   ConsumerState<StartScreen> createState() => _StartScreenState();
@@ -74,15 +74,15 @@ class _StartScreenState extends ConsumerState<StartScreen> {
         items: <BottomBarItem>[
           BottomBarItem(
             icon: Icon(Icons.person_2_outlined),
-            title: Text('Профиль') 
+            title: Text(localizations.navbottonbarTitles[0]) 
           ),
           BottomBarItem(
             icon: Icon(Icons.home),
-            title: Text('Главная') 
+            title: Text(localizations.navbottonbarTitles[1]) 
           ),
           BottomBarItem(
             icon: Icon(Icons.search),
-            title: Text('Поиск') 
+            title: Text(localizations.navbottonbarTitles[2]) 
           ),
         ],
         currentIndex: _currentBottomIndex,
@@ -127,7 +127,7 @@ class HomeScreen extends ConsumerWidget {
                 itemCount: categoryes.length,
                 itemBuilder: (context, index) {
                   return ListCategory(
-                    title: categoryes[index].title,
+                    title: localizations.categotyTitles[index],
                     imagePath: categoryes[index].imagePath,
                   );
                 }
@@ -154,9 +154,9 @@ class HomeScreen extends ConsumerWidget {
                 itemCount: posts.length,
                 itemBuilder: (context, index) {
                   return ListPopular(
-                    title: posts[index].title,
+                    title: localizations.postsTitle[index],
                     imagePath: posts[index].imagePath,
-                    category: posts[index].category,
+                    category: localizations.category[index],
                     indexId: posts[index].id,
                   );
                 },

@@ -85,7 +85,7 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                   Padding(
                     padding: const EdgeInsets.only(
                       left: 60),
-                    child: Text('Настройки', style: GoogleFonts.poppins(
+                    child: Text(localizations.sectionsTitles[3], style: GoogleFonts.poppins(
                       fontSize: 24
                     ),)
                     ),

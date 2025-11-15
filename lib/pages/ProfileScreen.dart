@@ -46,17 +46,17 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               
                   ListStats(
                     cardData: '1',
-                    cardName: 'Растения',
+                    cardName: localizations.statisticTitles[0],
                   ),
               
                   ListStats(
                     cardData: '1',
-                    cardName: 'Растения',
+                    cardName: localizations.statisticTitles[1],
                   ),
               
                   ListStats(
                     cardData: '1',
-                    cardName: 'Записей',
+                    cardName: localizations.statisticTitles[2],
                   ),
               
                 ],
@@ -66,7 +66,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
             Padding(
               padding: const EdgeInsets.all(20),
               child: Center(
-                child: Text('Разделы', style: TextStyle(
+                child: Text(localizations.sections, style: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 16
                 ),
