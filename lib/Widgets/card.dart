@@ -77,71 +77,35 @@ class _TestState extends ConsumerState<Test> {
                       )
                     ),
 
-                    SizedBox(
-                      height: 10,
-                    ),
-
                     // Описание
 
-                    RichText(
-                      text: TextSpan(
-                      style: GoogleFonts.poppins(
-                        color: const Color.fromARGB(255, 87, 87, 87),
-                        fontSize: 15
-                      ),
-                      
-                      children: <TextSpan> [
-                        TextSpan(
-                          text: localizations.cardTitles[0],
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold
-                          )
-                        ),
-                        TextSpan(
-                          text: ' ',
-                        ),
-                        TextSpan(
-                          text: widget.descripPlant
-                        )
-                      ]
-                    )),
-                    
-                    SizedBox(
-                      height: 5,
+                    CustRichTextCard(
+                      firtsText: localizations.cardTitles[0],
+                      descriptText: widget.descripPlant, 
                     ),
-
+                    
                     // Категория
 
-                    RichText(text: TextSpan(
-                      style: GoogleFonts.poppins(
-                        color: const Color.fromARGB(255, 87, 87, 87),
-                        fontSize: 15
-                      ),
-                      children: <TextSpan> [
-                        TextSpan(
-                          text: localizations.cardTitles[1],
-
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold
-                          )
-                        ),
-                        TextSpan(
-                          text: ' ',
-                        ),
-                        TextSpan(
-                          text:widget.climatePlant,
-                        )
-
-                      ]
-                    )),
-
-                    Text(localizations.cardTitles[2],
-                    style: GoogleFonts.poppins(
-                      fontSize: 14,
-                      color: const Color.fromARGB(255, 87, 87, 87)
-                      ),
+                    CustRichTextCard(
+                      firtsText: localizations.cardTitles[1],
+                      descriptText: widget.climatePlant, 
                     ),
-                    
+
+                    // Поливы
+
+                    CustRichTextCard(
+                      firtsText: localizations.cardTitles[2],
+                      descriptText: 'Доделать', 
+                    ),
+
+                    // Особенности
+
+                    CustRichTextCard(
+                      firtsText: localizations.cardTitles[3],
+                      descriptText: 'Доделать', 
+                    ),
+
+
                     ],
                   ),
                 ),
@@ -173,27 +137,36 @@ class CustRichTextCard extends StatefulWidget {
 class _CustRichTextCardState extends State<CustRichTextCard> {
   @override
   Widget build(BuildContext context) {
-    return RichText(
-      text: TextSpan(
-        style: GoogleFonts.poppins(
-          color: const Color.fromARGB(255, 87, 87, 87),
-          fontSize: 15,
+    return Column(
+      children: [
+        
+        SizedBox(
+          height: 10,
         ),
-        children: <TextSpan>[
-          TextSpan(
-            text: widget.firtsText, style: TextStyle(
-              fontWeight: FontWeight.bold
-              )
+
+        RichText(
+          text: TextSpan(
+            style: GoogleFonts.poppins(
+              color: const Color.fromARGB(255, 87, 87, 87),
+              fontSize: 15,
             ),
-            TextSpan(
-              text: ' ',
-              ),
-            TextSpan(
-              text: widget.descriptText
-            )
-        ]
-      ),
-      
+            children: <TextSpan>[
+              TextSpan(
+                text: widget.firtsText, style: TextStyle(
+                  fontWeight: FontWeight.bold
+                  )
+                ),
+                TextSpan(
+                  text: ': ',
+                  ),
+                TextSpan(
+                  text: widget.descriptText
+                )
+            ]
+          ),
+          
+        ),
+      ],
     );
   }
 }
