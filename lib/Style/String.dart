@@ -22,6 +22,10 @@ class AppLocalizations {
   List<String> get postsTitle => List<String>.from(texts['postsTitle']!);
   List<String> get category => List<String>.from(texts['category']!);
 
+  // Карты популярные
+
+  List<String> get cardTitles => List<String>.from(texts['cardTitles']!);
+
   // Остальные
 
   List<String> get navbottonbarTitles => List<String>.from(texts['navbottonbarTitles']!);
@@ -62,6 +66,12 @@ final localizationMap = {
       'Уличная', 'Комнатная', 'Комнатная', 'Офисный'
       ],
 
+    // Карты популярное
+
+    'cardTitles': [
+      'Описание', 'Категория', 'Сколько нужно поливов в день', 'Особенности'
+    ],
+
 
     // Остальное
 
@@ -98,6 +108,12 @@ final localizationMap = {
 
     'category': ['Outdoor', 'Outdoor', 'Outdoor', 'Outdoor', 'Outdoor', 'Outdoor',
       'Outdoor', 'Indoor', 'Indoor', 'Office'
+    ],
+
+    // Карты популярное
+
+    'cardTitles': [
+      'Description', 'Category', 'How many waterings per day are needed', 'Features'
     ],
 
     // Остальное

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_first_app/main.dart';
 
-class Test extends StatefulWidget {
+class Test extends ConsumerStatefulWidget {
   
 
   final String namePlant;
@@ -20,30 +22,42 @@ class Test extends StatefulWidget {
   });
 
   @override
-  State<Test> createState() => _TestState();
+  ConsumerState<Test> createState() => _TestState();
 }
 
-class _TestState extends State<Test> {
+class _TestState extends ConsumerState<Test> {
   @override
   Widget build(BuildContext context) {
+
+    final localizations = ref.watch(localizationProvider);
+
     return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.namePlant),
+      ),
       body: SafeArea(
         child: Column(
           children: [
-            Container(
-              decoration: BoxDecoration(  
-                borderRadius: BorderRadius.circular(15),
-                border: Border(
-                  bottom: BorderSide(
-                    color: Colors.black,
-                    width: 1.5
+
+            // Отступы для теста
+
+            Padding( 
+              padding: const EdgeInsets.all(15.0),
+              child: Container(
+                decoration: BoxDecoration(  
+                  borderRadius: BorderRadius.circular(15),
+                  border: Border(
+                    bottom: BorderSide(
+                      color: Colors.black,
+                      width: 1.5
+                    )
                   )
-                )
-
+              
+                  ),
+              
+                child: Image.asset(
+                  widget.imagePlant,
                 ),
-
-              child: Image.asset(
-                widget.imagePlant,
               ),
             ),
 
@@ -69,17 +83,22 @@ class _TestState extends State<Test> {
 
                     // Описание
 
-                    RichText(text: TextSpan(
+                    RichText(
+                      text: TextSpan(
                       style: GoogleFonts.poppins(
                         color: const Color.fromARGB(255, 87, 87, 87),
                         fontSize: 15
                       ),
+                      
                       children: <TextSpan> [
                         TextSpan(
-                          text: 'Описание: ',
+                          text: localizations.cardTitles[0],
                           style: TextStyle(
                             fontWeight: FontWeight.bold
                           )
+                        ),
+                        TextSpan(
+                          text: ' ',
                         ),
                         TextSpan(
                           text: widget.descripPlant
@@ -100,20 +119,23 @@ class _TestState extends State<Test> {
                       ),
                       children: <TextSpan> [
                         TextSpan(
-                          text: 'Категория: ',
+                          text: localizations.cardTitles[1],
 
                           style: TextStyle(
                             fontWeight: FontWeight.bold
                           )
                         ),
                         TextSpan(
-                          text: widget.climatePlant,
+                          text: ' ',
+                        ),
+                        TextSpan(
+                          text:widget.climatePlant,
                         )
 
                       ]
                     )),
 
-                    Text('Описание: ${widget.specialPlant}',
+                    Text(localizations.cardTitles[2],
                     style: GoogleFonts.poppins(
                       fontSize: 14,
                       color: const Color.fromARGB(255, 87, 87, 87)
@@ -127,6 +149,51 @@ class _TestState extends State<Test> {
             ],
       ),
       )
+    );
+  }
+}
+
+
+// Виджет для текста
+
+class CustRichTextCard extends StatefulWidget {
+
+  final String firtsText;
+  final String descriptText;
+
+  CustRichTextCard({
+    required this.firtsText,
+    required this.descriptText,
+  });
+
+  @override
+  State<CustRichTextCard> createState() => _CustRichTextCardState();
+}
+
+class _CustRichTextCardState extends State<CustRichTextCard> {
+  @override
+  Widget build(BuildContext context) {
+    return RichText(
+      text: TextSpan(
+        style: GoogleFonts.poppins(
+          color: const Color.fromARGB(255, 87, 87, 87),
+          fontSize: 15,
+        ),
+        children: <TextSpan>[
+          TextSpan(
+            text: widget.firtsText, style: TextStyle(
+              fontWeight: FontWeight.bold
+              )
+            ),
+            TextSpan(
+              text: ' ',
+              ),
+            TextSpan(
+              text: widget.descriptText
+            )
+        ]
+      ),
+      
     );
   }
 }
