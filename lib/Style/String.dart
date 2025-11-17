@@ -59,12 +59,16 @@ final localizationMap = {
 
     'postsTitle': [
       'Роза', 'Ромашка', 'Гипсофила', 'Тюльпан', 'Пион', 'Лаванда', 
-      'Подсолнух', 'Фиалка', 'Алоэ', 'Кактус'
-      ],
+      'Подсолнух', 'Фиалка', 'Алоэ', 'Кактус',
+      'Орхидея', 'Сансевиерия', 'Монстера', 'Герань', 'Хлорофитум',
+      'Спатифиллум', 'Фикус', 'Замиокулькас', 'Бамбук', 'Сукулент'
+    ],
 
     'category': ['Уличная', 'Уличная', 'Уличная', 'Уличная', 'Уличная', 'Уличная',
-      'Уличная', 'Комнатная', 'Комнатная', 'Офисный'
-      ],
+        'Уличная', 'Комнатная', 'Комнатная', 'Офисный',
+        'Комнатная', 'Офисный', 'Комнатная', 'Комнатная', 'Офисный',
+        'Комнатная', 'Комнатная', 'Офисный', 'Остальные', 'Комнатная'
+    ],
 
     // Карты популярное
 
@@ -101,14 +105,19 @@ final localizationMap = {
 
     // Популярные
 
-    'postsTitle': [
-      'Rose', 'Chamomile', 'Gypsophila', 'Tulip', 'Peony', 'Lavender',
-      'Sunflower', 'Violet', 'Aloe', 'Cactus'
-    ],
+  'postsTitle': [
+    'Rose', 'Chamomile', 'Gypsophila', 'Tulip', 'Peony', 'Lavender',
+    'Sunflower', 'Violet', 'Aloe', 'Cactus',
+    'Orchid', 'Sansevieria', 'Monstera', 'Geranium', 'Chlorophytum',
+    'Spathiphyllum', 'Ficus', 'Zamioculcas', 'Bamboo', 'Succulent'
+  ],
 
-    'category': ['Outdoor', 'Outdoor', 'Outdoor', 'Outdoor', 'Outdoor', 'Outdoor',
-      'Outdoor', 'Indoor', 'Indoor', 'Office'
-    ],
+  'category': [
+    'Outdoor', 'Outdoor', 'Outdoor', 'Outdoor', 'Outdoor', 'Outdoor',
+    'Outdoor', 'Indoor', 'Indoor', 'Office',
+    'Indoor', 'Office', 'Indoor', 'Indoor', 'Office',
+    'Indoor', 'Indoor', 'Office', 'Others', 'Indoor'
+  ],
 
     // Карты популярное
 

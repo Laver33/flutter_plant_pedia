@@ -22,7 +22,7 @@ class ListPopular extends StatefulWidget {
 
 class _ListPopularState extends State<ListPopular> {
 
-  double cardWidth = 120;
+  double cardWidth = 130;
   
 
   @override
@@ -115,7 +115,7 @@ class _ListPopularState extends State<ListPopular> {
                 child: Center(
                   child: Text(widget.title,  
                   style: GoogleFonts.poppins(
-                    fontSize: 14,
+                    fontSize: 12,
                     color: Colors.black
                   ),
                   )
