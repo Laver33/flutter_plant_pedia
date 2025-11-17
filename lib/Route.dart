@@ -8,6 +8,7 @@ import 'package:my_first_app/pages/sections/PlantsScreen.dart';
 import 'package:my_first_app/pages/sections/RecordScreen.dart';
 import 'package:my_first_app/pages/sections/SettingsScreen.dart';
 
+
 final goRouter = GoRouter(
   routes: [
     GoRoute(

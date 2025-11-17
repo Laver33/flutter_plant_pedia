@@ -83,7 +83,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               titleSecond: localizations.sectionsTitles[1],
               imageSecond: AppAssets.calendarImg,
               colorSecond: AppColors.calendarColor,
-              navigateSecond: '/settings',
+              navigateSecond: '/calendar',
             ),
 
             SizedBox(
