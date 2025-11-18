@@ -105,12 +105,37 @@ class _TestState extends ConsumerState<Test> {
                       descriptText: 'Доделать', 
                     ),
 
-
                     ],
                   ),
                 ),
+              ),
+
+              SizedBox(height: 20),
+
+              OutlinedButton.icon(
+                onPressed: (){}, 
+
+                icon: Icon(Icons.message,
+                color: Colors.black
+                ),
+
+                label: Text(localizations.buttonCard,
+                style: GoogleFonts.poppins(
+                  fontSize: 14,
+                  color: Colors.black
+                ),),
+
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(250, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(5)
+                  ),
+                  side: BorderSide(
+                    width: 0.5,
+                  )
+                ),
               )
-            ],
+        ],
       ),
       )
     );

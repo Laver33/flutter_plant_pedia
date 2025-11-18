@@ -78,7 +78,7 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen> {
               titleFirst: localizations.sectionsTitles[0],
               imageFirst: AppAssets.plantsImg,
               colorFirst: AppColors.plantsColor,
-              navigateFirst: '/settings',
+              navigateFirst: '/plant',
 
               titleSecond: localizations.sectionsTitles[1],
               imageSecond: AppAssets.calendarImg,

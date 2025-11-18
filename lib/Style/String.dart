@@ -12,9 +12,11 @@ class AppLocalizations {
   String get static => texts['static']!;
   String get hintTextSerch => texts['hintTextSerch']!;
   String get sections => texts['sections']!;
+  String get buttonCard => texts['buttonCard']!;
 
   // Для календаря ( статические )
   List<String> get calendarLeng => List<String>.from(texts['calendarLeng']!);
+
 
   // Категория растений
 
@@ -58,8 +60,12 @@ final localizationMap = {
     'sections': 'Разделы',
 
     // Категории растений
-
+    
     'categotyTitles': ['Уличные', 'Комнатные', 'Офисные', 'Остальные'],
+
+    // Кнопка для карт цветов
+
+    'buttonCard': 'Добавить растение',
 
     // Популярное
 
@@ -141,7 +147,11 @@ final localizationMap = {
 
     // Категория растений
 
-    'categotyTitles': ['Outdoor', 'Indoor', 'Office', 'Other'],   
+    'categotyTitles': ['Outdoor', 'Indoor', 'Office', 'Other'],  
+
+    // Кнопка для карт цветов
+
+    'buttonCard': 'Add plant', 
 
     // Популярные
 
