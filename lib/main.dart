@@ -12,6 +12,7 @@ import 'package:my_first_app/Widgets/list_popular.dart';
 import 'package:my_first_app/data/post_data.dart';
 import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
 
+
 // Provider 
 final currentLocaleProvider = StateProvider<String>((ref) => 'ru');
 

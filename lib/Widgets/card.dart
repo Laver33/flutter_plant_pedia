@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_first_app/data/post_data.dart';
 import 'package:my_first_app/main.dart';
+import 'package:my_first_app/provider/plants_provider.dart';
 
 class Test extends ConsumerStatefulWidget {
   
@@ -26,6 +28,32 @@ class Test extends ConsumerStatefulWidget {
 }
 
 class _TestState extends ConsumerState<Test> {
+
+
+    void _addToMyPlants() {
+      
+    final plant = posts.firstWhere(
+      (p) => p.name == widget.namePlant, 
+      orElse: () => PostData(
+        title: widget.namePlant,
+        name: widget.namePlant,
+        description: widget.descripPlant,
+        id: 999, 
+        imagePath: widget.imagePlant,
+        category: widget.climatePlant,
+      ),
+    );
+
+    ref.read(plantsProvider.notifier).addPlant(plant);
+    
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('${widget.namePlant} добавлен в коллекцию'),
+        duration: Duration(seconds: 2),
+      )
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -113,7 +141,7 @@ class _TestState extends ConsumerState<Test> {
               SizedBox(height: 20),
 
               OutlinedButton.icon(
-                onPressed: (){}, 
+                onPressed: _addToMyPlants,
 
                 icon: Icon(Icons.message,
                 color: Colors.black
