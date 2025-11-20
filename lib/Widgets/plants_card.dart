@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:my_first_app/data/post_data.dart';
+import 'package:my_first_app/main.dart';
 
-class PlantsCard extends StatelessWidget {
+class PlantsCard extends ConsumerStatefulWidget {
   final PostData plant;
   final int quantity;
   final VoidCallback onRemove;
@@ -14,7 +16,15 @@ class PlantsCard extends StatelessWidget {
   });
 
   @override
+  ConsumerState<PlantsCard> createState() => _PlantsCardState();
+}
+
+class _PlantsCardState extends ConsumerState<PlantsCard> {
+  @override
   Widget build(BuildContext context) {
+
+    final localizations = ref.watch(localizationProvider);
+
     return Card(
       elevation: 3,
       child: Column(
@@ -22,7 +32,7 @@ class PlantsCard extends StatelessWidget {
           Expanded(
             flex: 3,
             child: Image.asset(
-              plant.imagePath,
+              widget.plant.imagePath,
               width: 120,
               fit: BoxFit.cover,
             ),
@@ -34,7 +44,7 @@ class PlantsCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    plant.title,
+                    widget.plant.title,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
@@ -42,21 +52,28 @@ class PlantsCard extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                   ),
-                  Text(
-                    'Количество: $quantity',
-                    style: TextStyle(
+
+                  RichText(
+                    text: TextSpan(
+                      children: [
+                      TextSpan(
+                        text: localizations.plantsCardText[0],
+                      ),
+                      TextSpan(
+                        text: '${widget.quantity}')
+                      ], style: TextStyle(
                       color: Colors.grey[600],
-                      fontSize: 13,
-                    ),
-                  ),
+                      fontSize: 13,),)
+                      ),
+
                   ElevatedButton(
-                    onPressed: onRemove,
+                    onPressed: widget.onRemove,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.red,
                       foregroundColor: Colors.white,
                       minimumSize: Size(double.infinity, 30),
                     ),
-                    child: Text('Удалить'),
+                    child: Text(localizations.plantsCardText[1]),
                   ),
                 ],
               ),

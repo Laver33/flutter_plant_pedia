@@ -18,9 +18,6 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
     // Switch №1
     bool currentNum1 = false;
 
-    // Switch №2
-    bool currentNum2 = false;
-
 
     static const TextStyle _textStyle = TextStyle(
       fontFamily: 'Poppins',
@@ -168,68 +165,39 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
                       ),
                     ),
 
-                    SizedBox(
-                      height: 10,
-                    ),
-
-                    Container(
-                      height: ContainerOptionsSize / 2,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)
-                      ),
-                      
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-
-                          Text(
-                            localizations.settingsTitles[1],
-                          ),
-
-                          Container(
-                            child: AnimatedToggleSwitch<bool>.dual(
-                              current: currentNum2, 
-                              first: false, 
-                              second: true,
-                              spacing: 10,
-                              height: ContainerOptionsSize / 4,
-                              borderWidth: 2,
-                              
-
-                              style: ToggleStyle(
-                                borderColor: Colors.transparent,
-                                backgroundColor: Colors.white,
-                                boxShadow: [
-
-                                  BoxShadow(
-                                    color: Colors.black,
-                                    spreadRadius: 1,
-                                    blurRadius: 2,
-                                    offset: Offset(0, 0.1)
-                                  )
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        height: ContainerOptionsSize,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20)
+                        ),
+                        child: Column(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Icon(Icons.warning, color: Colors.red),
+                                  Text(
+                                    localizations.warningTitle, style: GoogleFonts.poppins(
+                                    fontSize: 15
+                                  ),),
                                 ],
                               ),
-                              onChanged: (ind) => setState(() => currentNum2 = ind),
-                              
-                              styleBuilder: (ind) => ToggleStyle(indicatorColor: ind ? Colors.red : Colors.green ),
-                          
-                              textBuilder: (ind) => ind ?
-                              Center(
-                                child: Text(localizations.switchText2[0], 
-                                style: _textStyle)
-                              ) 
+                            ),
 
-                              : Center(child:  Text(localizations.switchText2[1],
-                              style: GoogleFonts.poppins(
-                                fontSize: 12
-                              ),)),
-                              
+                            Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Text(localizations.appWarningText),
                             )
-                          ),
-                        ],
+
+                          ],
+                        ),
                       ),
-                    ),
+                    )
                   ],
                 ),
               ),

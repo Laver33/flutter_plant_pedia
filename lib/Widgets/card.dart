@@ -48,7 +48,7 @@ class _TestState extends ConsumerState<Test> {
     
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('${widget.namePlant} добавлен в коллекцию'),
+        content: Text('${widget.namePlant} добавлен в коллекцию'), // Локализацию доделать
         duration: Duration(seconds: 2),
       )
     );

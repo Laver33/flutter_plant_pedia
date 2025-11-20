@@ -43,11 +43,26 @@ class AppLocalizations {
   // Данные для растений
 
   List<String> get plantsDesc => List<String>.from(texts['plantsDesc']!);
+
+  // Настройки
+
+  String get warningTitle => texts['warningTitle']!;
+  String get appWarningText => texts ['appWarningText']!;
+
+  // Растения карточка
+
+  List<String> get plantsCardText => List <String>.from(texts['plantsCardText']!);
   
 }
 
 final localizationMap = {
   'ru': AppLocalizations({
+
+    // Растения карточка
+
+    'plantsCardText': [
+      'Количество: ', 'Удалить'
+    ],
 
     'popularPlants': 'Популярные',
     'plantCategory': 'Категории растений',
@@ -129,11 +144,22 @@ final localizationMap = {
       'Современное офисное растение с глянцевыми темно-зелеными листьями. Очень выносливое и неприхотливое.',
       'Декоративное растение с прямыми стеблями, часто выращиваемое в воде. Символ удачи и процветания.',
       'Декоративное растение с мясистыми листьями, образующими розетку. Не требует частого полива и ухода.',
-    ]
+    ],
+
+    // Настройки
+
+    'warningTitle': 'Внимание',
+    'appWarningText': 'Учебный проект: данное приложение разработано для демонстрации навыков программирования. Функциональность может быть ограничена.'
 
   }),
   
   'en': AppLocalizations({
+
+    // Растения карточка
+
+    'plantsCardText': [
+      'Quantity: ', 'Delete'
+    ],
 
     'popularPlants': 'Popular',
     'plantCategory': 'Plant Categories', 
@@ -216,6 +242,11 @@ final localizationMap = {
       'A decorative plant with straight stems, often grown in water. A symbol of luck and prosperity.',
       'A decorative plant with fleshy leaves forming a rosette. Does not require frequent watering or care.',
     ],
+
+    // Настройки
+
+    'warningTitle': 'Warning',
+    'appWarningText': 'Educational project: this application was developed to demonstrate programming skills. Functionality may be limited.'
 
 
   }),
