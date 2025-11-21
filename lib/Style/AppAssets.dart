@@ -15,9 +15,6 @@ abstract class AppAssets {
   static String violet = '${basePath}Plantimg/Violet.png';
   static String aloe = '${basePath}Plantimg/Aloe.png';
   static String cactus = '${basePath}Plantimg/Cactus.png';
-
-  // Новые растения
-
   static String orchid = '${basePath}Plantimg/orchid.png';
   static String sansevieria = '${basePath}Plantimg/sansevieria.png';
   static String monstera = '${basePath}Plantimg/monstera.png';
@@ -28,6 +25,29 @@ abstract class AppAssets {
   static String zamioculcas = '${basePath}Plantimg/zamioculcas.png';
   static String bamboo = '${basePath}Plantimg/bamboo.png';
   static String succulent = '${basePath}Plantimg/succulent.png';
+  
+  // второй пак растений
+
+  static String hydrangea = '${basePath}Plantimg/hydrangea.png';
+  static String iris = '${basePath}Plantimg/iris.png';
+  static String daffodil = '${basePath}Plantimg/daffodil.png';
+  static String lilyOfTheValley = '${basePath}Plantimg/lilyOfTheValley.png';
+  static String lilac = '${basePath}Plantimg/lilac.png';
+  static String jasmine = '${basePath}Plantimg/jasmine.png';
+  static String mint = '${basePath}Plantimg/mint.png';
+  static String basil = '${basePath}Plantimg/basil.png';
+  static String petunia = '${basePath}Plantimg/petunia.png';
+  static String begonia = '${basePath}Plantimg/begonia.png';
+  static String azalea = '${basePath}Plantimg/azalea.png';
+  static String anthurium = '${basePath}Plantimg/anthurium.png';
+  static String kalanchoe = '${basePath}Plantimg/kalanchoe.png';
+  static String crassula = '${basePath}Plantimg/crassula.png';
+  static String dracaena = '${basePath}Plantimg/dracaena.png';
+  static String aglaonema = '${basePath}Plantimg/aglaonema.png';
+  static String hippeastrum = '${basePath}Plantimg/hippeastrum.png';
+  static String fern = '${basePath}Plantimg/fern.png';
+  static String ivy = '${basePath}Plantimg/ivy.png';
+  static String eucalyptus = '${basePath}Plantimg/eucalyptus.png';
   
   // Категории
 

@@ -115,7 +115,7 @@ class _ListPopularState extends State<ListPopular> {
                 child: Center(
                   child: Text(widget.title,  
                   style: GoogleFonts.poppins(
-                    fontSize: 12,
+                    fontSize: 11,
                     color: Colors.black
                   ),
                   )
