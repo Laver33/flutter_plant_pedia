@@ -30,7 +30,7 @@ class PlantsScreen extends ConsumerWidget {
         child: cartItems.isEmpty
             ? Center(
                 child: Text(
-                  'Ваша коллекция растений пуста',
+                  localizations.plantsCollect,
                   style: TextStyle(fontSize: 18),
                 ),
               )

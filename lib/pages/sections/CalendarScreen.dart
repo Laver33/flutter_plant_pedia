@@ -16,6 +16,7 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
 
   final Map<DateTime, List> _events = {
     DateTime.utc(2025, 11, 22): ['2025'],
+    DateTime.utc(2025, 11, 24): ['2026'],
   };
 
   List<dynamic> _getEventsForDay(DateTime day) {

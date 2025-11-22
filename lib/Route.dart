@@ -34,6 +34,7 @@ final goRouter = GoRouter(
           climatePlant: cards.category , 
           specialPlant: cards.category,
           imagePlant: cards.imagePath,
+          plantId: cardId, 
         );
       }
     ), 

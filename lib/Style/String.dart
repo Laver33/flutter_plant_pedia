@@ -51,7 +51,12 @@ class AppLocalizations {
 
   // Растения карточка
 
+  String get plantsCollect => texts['plantsCollect']!;
   List<String> get plantsCardText => List <String>.from(texts['plantsCardText']!);
+
+  // Уведомление 
+
+  String get notificationTitle => texts['notificationTitle']!;
   
 }
 
@@ -63,6 +68,12 @@ final localizationMap = {
     'plantsCardText': [
       'Количество: ', 'Удалить'
     ],
+
+    'plantsCollect': 'Ваша коллекция растений пуста',
+
+    // Уведомление
+
+    'notificationTitle': ' добавлен в коллекцию',
 
     'popularPlants': 'Популярные',
     'plantCategory': 'Категории растений',
@@ -192,6 +203,13 @@ final localizationMap = {
     'plantsCardText': [
       'Quantity: ', 'Delete'
     ],
+
+    'plantsCollect': 'Your plant collection is empty.',
+
+    // Уведомление
+
+    'notificationTitle': ' added to collection',
+
 
     'popularPlants': 'Popular',
     'plantCategory': 'Plant Categories', 

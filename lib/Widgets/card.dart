@@ -6,14 +6,12 @@ import 'package:my_first_app/main.dart';
 import 'package:my_first_app/provider/plants_provider.dart';
 
 class Test extends ConsumerStatefulWidget {
-  
-
   final String namePlant;
   final String descripPlant;
   final String climatePlant;
   final String specialPlant;
   final String imagePlant;
-  
+  final int plantId;
 
   Test({
     required this.namePlant,
@@ -21,6 +19,7 @@ class Test extends ConsumerStatefulWidget {
     required this.climatePlant,
     required this.specialPlant,
     required this.imagePlant,
+    required this.plantId,
   });
 
   @override
@@ -29,9 +28,7 @@ class Test extends ConsumerStatefulWidget {
 
 class _TestState extends ConsumerState<Test> {
 
-
-    void _addToMyPlants() {
-      
+  void _addToMyPlants() {
     final plant = posts.firstWhere(
       (p) => p.name == widget.namePlant, 
       orElse: () => PostData(
@@ -45,19 +42,40 @@ class _TestState extends ConsumerState<Test> {
     );
 
     ref.read(plantsProvider.notifier).addPlant(plant);
+    final localizations = ref.watch(localizationProvider);
     
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Text('${widget.namePlant} добавлен в коллекцию'), // Локализацию доделать
+        content: RichText(
+          text: TextSpan(
+            children: <TextSpan>[
+              TextSpan(text: widget.namePlant),
+              TextSpan(text: localizations.notificationTitle),
+            ]
+          ),
+        ),
         duration: Duration(seconds: 2),
       )
     );
   }
 
+  // Лок описание
+  String _getLocalizedDescription() {
+    final localizations = ref.watch(localizationProvider);
+    
+    if (localizations.plantsDesc.isNotEmpty && 
+        widget.plantId > 0 && 
+        widget.plantId <= localizations.plantsDesc.length) {
+      return localizations.plantsDesc[widget.plantId - 1]; 
+    }
+    
+    return widget.descripPlant;
+  }
+
   @override
   Widget build(BuildContext context) {
-
     final localizations = ref.watch(localizationProvider);
+    final localizedDescription = _getLocalizedDescription(); // Вызываем функцию
 
     return Scaffold(
       appBar: AppBar(
@@ -66,9 +84,6 @@ class _TestState extends ConsumerState<Test> {
       body: SafeArea(
         child: Column(
           children: [
-
-            // Отступы для теста
-
             Padding( 
               padding: const EdgeInsets.all(15.0),
               child: Container(
@@ -80,9 +95,7 @@ class _TestState extends ConsumerState<Test> {
                       width: 1.5
                     )
                   )
-              
-                  ),
-              
+                ),
                 child: Image.asset(
                   widget.imagePlant,
                 ),
@@ -93,88 +106,61 @@ class _TestState extends ConsumerState<Test> {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(20, 20, 0, 0),
                 child: Column(
-
                   crossAxisAlignment: CrossAxisAlignment.start,
-
                   children: [
-
                     Text(widget.namePlant, 
-                    style: GoogleFonts.poppins(
-                      fontWeight: FontWeight.w500,
-                      fontSize: 18,
+                      style: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 18,
                       )
                     ),
 
-                    // Описание
-
+                    // Описание 
                     CustRichTextCard(
                       firtsText: localizations.cardTitles[0],
-                      descriptText: widget.descripPlant, 
+                      descriptText: localizedDescription, 
                     ),
                     
                     // Категория
-
                     CustRichTextCard(
                       firtsText: localizations.cardTitles[1],
                       descriptText: widget.climatePlant, 
                     ),
 
-                    // Поливы
-
-                    CustRichTextCard(
-                      firtsText: localizations.cardTitles[2],
-                      descriptText: 'Доделать', 
-                    ),
-
-                    // Особенности
-
-                    CustRichTextCard(
-                      firtsText: localizations.cardTitles[3],
-                      descriptText: 'Доделать', 
-                    ),
-
-                    ],
-                  ),
+                  ],
                 ),
               ),
+            ),
 
-              SizedBox(height: 20),
+            SizedBox(height: 40),
 
-              OutlinedButton.icon(
-                onPressed: _addToMyPlants,
-
-                icon: Icon(Icons.message,
-                color: Colors.black
-                ),
-
-                label: Text(localizations.buttonCard,
+            OutlinedButton.icon(
+              onPressed: _addToMyPlants,
+              icon: Icon(Icons.message, color: Colors.black),
+              label: Text(localizations.buttonCard,
                 style: GoogleFonts.poppins(
                   fontSize: 14,
                   color: Colors.black
-                ),),
-
-                style: ElevatedButton.styleFrom(
-                  minimumSize: Size(250, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5)
-                  ),
-                  side: BorderSide(
-                    width: 0.5,
-                  )
                 ),
-              )
-        ],
+              ),
+              style: ElevatedButton.styleFrom(
+                minimumSize: Size(250, 50),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(5)
+                ),
+                side: BorderSide(width: 0.5),
+              ),
+            )
+          ],
+        ),
       ),
-      )
     );
   }
 }
 
-
-// Виджет для текста
+// Виджет каст
 
 class CustRichTextCard extends StatefulWidget {
-
   final String firtsText;
   final String descriptText;
 
@@ -192,11 +178,7 @@ class _CustRichTextCardState extends State<CustRichTextCard> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        
-        SizedBox(
-          height: 10,
-        ),
-
+        SizedBox(height: 10),
         RichText(
           text: TextSpan(
             style: GoogleFonts.poppins(
@@ -205,19 +187,13 @@ class _CustRichTextCardState extends State<CustRichTextCard> {
             ),
             children: <TextSpan>[
               TextSpan(
-                text: widget.firtsText, style: TextStyle(
-                  fontWeight: FontWeight.bold
-                  )
-                ),
-                TextSpan(
-                  text: ': ',
-                  ),
-                TextSpan(
-                  text: widget.descriptText
-                )
+                text: widget.firtsText, 
+                style: TextStyle(fontWeight: FontWeight.bold)
+              ),
+              TextSpan(text: ': '),
+              TextSpan(text: widget.descriptText)
             ]
           ),
-          
         ),
       ],
     );
