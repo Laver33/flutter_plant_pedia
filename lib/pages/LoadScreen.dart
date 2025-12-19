@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:go_router/go_router.dart';
 import 'package:my_first_app/Style/AppAssets.dart';
-import 'package:my_first_app/Style/CastColors.dart';
+import 'package:my_first_app/Widgets/loadscreen/load_screen_btn.dart';
 import 'package:my_first_app/main.dart';
 
 class LoadScreen extends ConsumerStatefulWidget {
@@ -71,31 +70,12 @@ class _LoadScreenState extends ConsumerState<LoadScreen> {
             
             Positioned(
 
-              bottom: 30, 
+              bottom: 35, 
               left: 0,
               right: 0,
 
               child: Center(
-                child: OutlinedButton(
-                  onPressed: () {
-                    setState(() {
-                      context.go('/main');
-                    });
-                  },
-
-                  style: OutlinedButton.styleFrom(
-                    backgroundColor: AppColors.butColor1,
-                    minimumSize: Size(350, 50),
-                  ),
-
-                  child: Text(
-                    "Продолжение",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 20
-                    ),
-                  ),
-                ),
+                child: CustomBtnAnimate()
               ),
             ),
           ],

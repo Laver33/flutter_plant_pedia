@@ -15,8 +15,7 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
   DateTime? _selectedDay;
 
   final Map<DateTime, List> _events = {
-    DateTime.utc(2025, 11, 22): ['2025'],
-    DateTime.utc(2025, 11, 24): ['2026'],
+    DateTime.utc(2025, 12, 22): ['2025'],
   };
 
   List<dynamic> _getEventsForDay(DateTime day) {
@@ -39,8 +38,8 @@ class _CalendarScreenState extends ConsumerState<CalendarScreen> {
           children: [
             TableCalendar(
               focusedDay: _focusedDay,
-              firstDay: DateTime.utc(2025, 11, 1), 
-              lastDay: DateTime.utc(2025, 12, 1),
+              firstDay: DateTime.utc(2025, 12, 1), 
+              lastDay: DateTime.utc(2025, 12, 30),
               
               selectedDayPredicate: (day) {
                 return isSameDay(_selectedDay, day);

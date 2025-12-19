@@ -163,6 +163,11 @@ class HomeScreen extends ConsumerWidget {
                 },
               ),
             ),
+
+
+            // Создание кнопки для добавления новых растений
+
+
           ],
         ),
       ),
